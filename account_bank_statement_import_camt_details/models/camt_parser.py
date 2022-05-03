@@ -19,7 +19,7 @@ class CamtDetailsParser(models.AbstractModel):
         if party_type_node and party_type_node[0].text != 'CRDT':
             party_type = 'Cdtr'
         party_type_node_ultmt = node.xpath(
-            '../../ns:UltmtDbtr', namespaces={'ns': ns})
+            './ns:RltdPties/ns:UltmtDbtr', namespaces={'ns': ns})
         if party_type_node_ultmt:
             party_type = 'UltmtDbtr'
         address_node = node.xpath(

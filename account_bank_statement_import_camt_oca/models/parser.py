@@ -100,7 +100,7 @@ class CamtParser(models.AbstractModel):
             party_type = 'Cdtr'
 
         party_type_node_ultmt = node.xpath(
-            '../../ns:UltmtDbtr', namespaces={'ns': ns})
+            './ns:RltdPties/ns:UltmtDbtr', namespaces={'ns': ns})
         if party_type_node_ultmt:
             party_type = 'UltmtDbtr'
 
